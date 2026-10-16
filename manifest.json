@@ -1,0 +1,1 @@
+{"name":"Hava Nöbeti","short_name":"Hava Nöbeti","description":"Yağmur ve fırtına yaklaşırken haber veren kişisel hava uyarısı.","start_url":"./","display":"standalone","background_color":"#f4f6ef","theme_color":"#10251e","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}

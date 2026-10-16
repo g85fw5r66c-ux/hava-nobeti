@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251e">
+  <meta name="description" content="Yağmur ve fırtına yaklaşırken haber veren kişisel hava uyarı uygulaması.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Hava Nöbeti</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Hava Nöbeti ana sayfa"><span class="brand-mark">☂</span><span>hava<span class="brand-light">nöbeti</span></span></a>
+      <span class="live"><i></i> CANLI TAHMİN</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">GÖKYÜZÜNÜ TAKİPTE</p>
+      <h1>Hava değişmeden<br><em>önce haberin olsun.</em></h1>
+      <p class="intro">Yağmur ve kuvvetli rüzgâr yaklaşırken sana haber verelim.</p>
+    </section>
+
+    <section class="location-card card">
+      <div class="section-head"><div><p class="eyebrow">TAKİP EDİLEN KONUM</p><h2 id="placeName">İstanbul</h2></div><button id="locateBtn" class="icon-button" title="Konumumu kullan" aria-label="Konumumu kullan">◎</button></div>
+      <form id="searchForm" class="search"><label class="sr-only" for="cityInput">Şehir ara</label><input id="cityInput" autocomplete="off" placeholder="Şehir veya ilçe ara…"><button type="submit" aria-label="Ara">↗</button></form>
+      <div id="searchResults" class="results" hidden></div>
+      <div class="weather-now"><div><span id="weatherIcon" class="weather-icon">☁</span><span id="weatherSummary">Tahmin yükleniyor</span></div><strong><span id="tempNow">—</span><small>°</small></strong></div>
+      <p id="updatedAt" class="muted">Hava durumu yükleniyor…</p>
+    </section>
+
+    <section class="alert-card card">
+      <div class="section-head"><div><p class="eyebrow">BİLDİRİM AYARLARI</p><h2>Ne zaman haber verelim?</h2></div><span class="bell">♧</span></div>
+      <label class="setting"><span class="setting-icon rain">☔</span><span class="setting-copy"><b>Kuvvetli yağış</b><small>Saatlik yağış bu seviyeyi aşınca</small></span><span class="threshold"><input id="rainLimit" type="number" min="0.5" max="50" step="0.5" value="2"><small>mm/sa</small></span></label>
+      <label class="setting"><span class="setting-icon wind">〰</span><span class="setting-copy"><b>Fırtına rüzgârı</b><small>Rüzgâr hamlesi bu seviyeyi aşınca</small></span><span class="threshold"><input id="windLimit" type="number" min="20" max="150" step="5" value="50"><small>km/sa</small></span></label>
+      <div class="notify-row"><span><b>Bildirimler</b><small id="notifyStatus">Uyarıları almak için aç</small></span><button id="notifyBtn" class="switch" role="switch" aria-checked="false"><span></span></button></div>
+      <div class="notice"><span>ⓘ</span><p>Uyarıların gelmesi için sayfa açık kalmalı. Konumun tahmin almak üzere Open-Meteo'ya gönderilir. Bu uygulama resmî acil durum uyarısı değildir.</p></div>
+    </section>
+
+    <section class="forecast card"><div class="section-head"><div><p class="eyebrow">ÖNÜMÜZDEKİ SAATLER</p><h2>Yakın tahmin</h2></div><span id="riskBadge" class="risk-badge">Kontrol ediliyor</span></div><div id="hourly" class="hours"><div class="loading">Tahmin alınıyor…</div></div><div id="alertMessage" class="alert-message" hidden></div></section>
+    <footer><span>HAVA NÖBETİ <b>·</b> KİŞİSEL HAVA UYARISI</span><span>Veri: <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · CC BY 4.0</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
